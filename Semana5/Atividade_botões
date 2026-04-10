@@ -2,4 +2,74 @@ O QUE O SISTEMA PRECISA FAZER?
 Ele precisa ler os botões, realizar a função do mesmo quando acionado, além disso, ligar os leds de acordo com sua cor e o momento do circuito.
 
 LISTA DE PASSOS:
-Primeiramente, deve-se fazer os micro servos permanecerem no grau 0 e os leds vermelhos ligados (No início), depois devemos criar as variáveis dos botões e definí-los para ler o pino digital conectado, após isso, deve-se fazer 
+Primeiramente, deve-se fazer os micro servos permanecerem no grau 0 e os leds vermelhos ligados (No início), depois devemos criar as variáveis dos botões e definí-los para ler o pino digital conectado,
+após isso, deve-se fazer o código de cada botão, sendo no 1 uma ordem, de definir para desligar led vermelho, ligar amarelo enquento está na ação do micro servo esquerdo, no botão 2 segue a mesma lógica só que para o micro servo direito,
+depois no botão 3 deve-se fazer a mesma coisa só que os dois ao mesmo tempo, e ao invés de no final ligar o led verde, liga-se apenas o led azul, e por fim, no botão 4, deve-se fazer a lógica contrária, numa ordem decrescente de graus,
+e seguindo a ordem inversa de leds.
+
+PSEUDOCÓDIGO SIMPLES:
+
+NO INÍCIO:
+Micro servo (A1) girar 0 graus
+Micro servo (A2) girar 0 graus
+Ligar led vermelho esquerdo
+Ligar led vermelho direito
+
+PARA SEMPRE:
+Ler botao1
+Ler botao2
+Ler botao3
+Ler botao4
+
+Se botao1 = 1
+desligar led vermelho esquedo
+Micro servo (A1) girar 0 graus
+aguardar
+ligar led amarelo
+Micro servo (A1) girar 30 graus
+aguardar
+Micro servo (A1) girar 60 graus
+aguardar
+Micro servo (A1) girar 90 graus
+desligar led amarelo
+ligar led verde esquerdo
+
+Se botao2 = 1
+desligar led vermelho direito
+Micro servo (A2) girar 0 graus
+aguardar
+ligar led amarelo
+Micro servo (A2) girar 30 graus
+aguardar
+Micro servo (A2) girar 60 graus
+aguardar
+Micro servo (A2) girar 90 graus
+desligar led amarelo
+ligar led verde direito
+
+Se botao3 = 1
+desligar led vermelho direito
+delisgar led vermelho esquerdo
+Micro servo (A2) girar 0 graus
+Micro servo (A1) girar 0 graus
+aguardar
+ligar led amarelo
+Micro servo (A2) girar 30 graus
+Micro servo (A1) girar 30 graus
+aguardar
+Micro servo (A2) girar 60 graus
+Micro servo (A1) girar 60 graus
+aguardar
+Micro servo (A2) girar 90 graus
+Micro servo (A1) girar 90 graus
+desligar led amarelo
+ligar led azul
+
+Se botao4 = 1
+desligar leds verde
+ligar led amarelo
+Micro servo (A2) girar 0 graus
+Micro servo (A1) girar 0 graus
+aguardar
+desligar led amarelo
+ligar leds vermelhos
