@@ -1,0 +1,45 @@
+Deus nos abençoe nesta nova atividade!
+
+Você foi contratado para desenvolver a lógica de um sistema de iluminação automática para uma sala técnica. Essa sala precisa manter uma sinalização visual conforme a quantidade de luz do ambiente.
+Para simular essa leitura, será utilizado um LDR, que identifica se o ambiente está claro, com iluminação média ou escuro. O sistema também terá um LED RGB, responsável por indicar visualmente a condição do ambiente.
+Quando o ambiente estiver claro, o LED RGB deve ficar verde. Quando a iluminação estiver média, o LED RGB deve ficar amarelo. Quando o ambiente estiver escuro, o LED RGB deve ficar vermelho, indicando necessidade de atenção.
+Além disso, o sistema possui três botões. O primeiro botão ativa o modo automático, em que o LED RGB responde ao LDR. O segundo botão ativa o modo manual de alerta, deixando o LED RGB vermelho independentemente da leitura do LDR.
+O terceiro botão desliga o sistema, apagando todos os LEDs. Durante os testes, foi observado que o operador pode pressionar mais de um botão ao mesmo tempo. O sistema deve tratar essa situação, evitando estados inconsistentes.
+
+
+1. Identifique as entradas e saídas do sistema 
+2. Apresente todos os componentes do sistema e para que eles servem
+3. Apresente as regras de funcionamento a serem implementadas
+4. Explique como você utilizaria estruturas if para controlar o sistema
+
+
+1. Entradas do sistema: LDR e os três botões. Saídas do sistema: LED RGB.
+
+2. LDR (potencializador): Identifica se o ambiente está claro, com iluminação média ou escuro.
+   LED RGB: Responsável por indicar visualmente a condição do ambiente. Verde: Quando o ambiente estiver claro. Amarelo: Quando a iluminação estiver média. Vermelho: Quando o ambiente estiver escuro, , indicando necessidade de atenção.
+   Botão 1: Ativa o modo automático, em que o LED RGB responde ao LDR.
+   Botão 2: Ativa o modo manual de alerta, deixando o LED RGB vermelho independentemente da leitura do LDR.
+   Botão 3: O terceiro botão desliga o sistema, apagando todos os LEDs.
+
+3. Primeira regra: O processo inicia ao apertar um dos botões.
+   Segunda regra: Se for apertado o botão 1, o sistema de LEDs age conforme a situação do LDR.
+   Terceira regra: Se for apertado o botão 2, o sistema age de forma manual.
+   Quarta regra: Se o botão 3 for apertado, todo sistema deve desligar, incluíndo os LEDs.
+   Quinta regra: Se o LDR estiver em tal posição o LED vermelho deve ser ligado.
+   Sexta regra: Se o LDR estiver em tal posição o LED amarelo deve ser ligado.
+   Sétima regra: Se o LDR estiver em tal posição o LED verde deve ser ligado.
+
+4. Eu utilizaria da seguinte forma:
+
+   if botao1 == 1:
+     if LDR == tal posicao:
+       ligar led vermelho
+     elif LDR == tal posicao:
+       ligar led amarelo:
+     elif LDR == tal posicao:
+       ligar led verde
+   if botao2 == 1:
+     desligar LDR
+   if botao3 == 3:
+     desligar sistema e LEDS
+   
